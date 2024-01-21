@@ -3,12 +3,14 @@
 import { Table } from "react-bootstrap";
 import { computeSplitCheck, getSubtotal, getTaxRate, getTipRate } from "@/utils/calculations";
 import { decimalToDollar } from "@/utils/format";
+import { itemizeCheckByPerson } from "@/utils/check-util";
 
 export default function SplitCheck({ check, tip, tax }) {
-    const subtotal = getSubtotal(check);
+    const itemizedCheck = itemizeCheckByPerson(check);
+    const subtotal = getSubtotal(itemizedCheck);
     const tipRate = getTipRate(parseFloat(tip), subtotal);
     const taxRate = getTaxRate(parseFloat(tax), subtotal);
-    const splitCheck = computeSplitCheck(check, taxRate, tipRate);
+    const splitCheck = computeSplitCheck(itemizedCheck, taxRate, tipRate);
 
     return(
         <div>
