@@ -23,6 +23,8 @@ export const ORDER2 = {
     itemList: [ITEM2, ITEM3]
 };
 
+export const ITEMIZED_CHECK = {"Dane": {items: [ITEM1, ITEM2], totalPrice: 15.0}, "Drew": {items: [ITEM1, ITEM3], totalPrice: 8.0}};
+
 // deep copy with JSON.parse(JSON.stringify(item));
-export const CHECK = [ITEM1, ITEM2, ITEM3, ITEM3];
-export const ITEMIZED_CHECK = [ORDER1, ORDER2];
+// export const CHECK = [ITEM1, ITEM2, ITEM3, ITEM3];
+// export const ITEMIZED_CHECK = [ORDER1, ORDER2];
